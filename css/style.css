@@ -2,8 +2,8 @@
 /* 共通 */
 
 :root {
-    --main-color: #B4CBD9;
-    --accent-color: #f2af05;
+    --main-color: #fbf9f1;
+    --accent-color: #92c7cf;
     --dark-main-color: #333;
     --text-bright-color: #f2f2f2;
     --icon-color: #fff;
@@ -17,11 +17,12 @@ body {
     font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont, ".SFNSDisplay-Regular", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Helvetica, "游ゴシック Medium", meiryo, sans-serif;
     font-size: 16px;
     letter-spacing: 0.1rem;
-    color: var(--dark-main-color);
+    background-color: var(--main-color);
+    color: var(--accent-color);
 }
 
 .container {
-    padding: 10rem; 
+    padding: 5rem 10rem; 
 }
 
 li {
@@ -34,6 +35,25 @@ li {
 a {
     color: var(--dark-main-color);
     text-decoration: none;
+}
+
+h2{
+  font-weight:normal;
+}
+
+.wrapper{
+  overflow:hidden
+}
+
+.title{
+  text-align: center;
+  font-size: 3rem;
+}
+
+.price{
+  font-family: "futura-pt-condensed", sans-serif;
+  font-weight: 500;
+  font-style: normal;
 }
 
 
@@ -77,7 +97,7 @@ div[class$="__text"],
 /* --------------------------------- */
 
 /* --------------------------------- */
-/* main-top */
+/* conA */
 
 .conA {
     display: flex;
@@ -89,60 +109,38 @@ div[class$="__text"],
     min-width:fit-content; 
     /* background-image: url(../img/dummy.jpg); */
     text-align: center;
-    color: #f2f2f2;
     color: var(--text-bright-color);
-    background: linear-gradient(to bottom, transparent 0%, transparent 70%, #fff 100%), url(../img/dummy.jpg);
+    background: linear-gradient(to bottom, transparent 0%, transparent 70%, #fff 100%), url(../img/top__pc.png);
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
     background-attachment: fixed;
 }
-/* main-top */
+  .conA .container{
+    position: relative;
+  }
+
+  .conA__text{
+    display: block;
+    position: absolute;
+    top:-30%;
+    left:-130%;
+  }
+
+  .conA__text h1,
+  .conA__text p
+  .conA__text a{
+
+    text-align: left;
+  }
+
+/* conA */
 /* --------------------------------- */
 
 /* --------------------------------- */
-/* introduce */
-.conB__icon {
-  text-align: center;
-}
+/* conB */
 
-.conB__icon-image {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.en-name {
-  margin-top: -2rem;
-  font-size: 0.8rem;
-}
-
-    
-.sns__list{
-  display: flex;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.sns__item a {
-  /* aタグにmarginは効かないから一度ブロックにする必要あり  */
-  text-decoration: none;
-  font-size: 42px;
-  color: var(--accent-color);
-}
-
-.sns__item:last-child a {
-  margin-right: 0;
-}
-
-.sns__item a:hover{
-    background-color:rgba(51,51,51,0.1) ;
-}
-
-/* introduce */
+/* conB */
 /* --------------------------------- */
 
 /* --------------------------------- */
@@ -153,10 +151,8 @@ div[class$="__text"],
   height: auto;
   padding-top: 56.25%;
   box-sizing: border-box;
-
-  background-image: url(../img/dummy.jpg);
-  background-position: center top;
-  background-size: cover;
+  background-position: center center;
+  background-size: 60%;
   background-repeat: no-repeat;
 
 }
@@ -164,68 +160,46 @@ div[class$="__text"],
   width: 100%;
   height: auto;
   padding: 3rem;
-  background: #fff;
   box-sizing: border-box;
 }
 .card__text > * + *{
   margin-top: 10px;
 }
 
+.card__text p{
+  margin-bottom: 3rem;
+}
+
+.cardA{
+  background-image: url(../img/priceA.png);
+}
+
+.cardB{
+  background-image: url(../img/priceB.png);
+}
+
+.accent{
+  background-color: var(--accent-color);
+}
+
+.accent h2,
+.accent p {
+  color: var(--text-bright-color);
+}
+
+.cardC{
+  background-image: url(../img/priceC.png);
+}
+
+.card__theme{
+  width: 100%;
+  margin: 0 auto;
+}
+
 /* card 共通 */
 /* --------------------------------- */
 
-/* --------------------------------- */
-/* cord col2 */
 
-.card-group{
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    height: auto;
-/* ポイント１：カードの横並べ折り返しのレイアウトを実現する */
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-  }
-
-/* 
-display: flex;でフレックスレイアウトを使い、
-flex-direction: row;で水平方向（横並べ）にカードを並べていきます。
-flex-wrap: wrap;で子要素が親要素の横幅を超えそうになった時に折り返しがされるようにします。
-justify-content: flex-start;は水平方向の並びを左揃えにしています。 */
-
-/* ポイント２：左右の間隔をあける */
-  .card-group > :nth-child(2n){
-    margin-left: 20px;
-  }
-/* 
-:nth-child(2n)でカードグループの
-直接の子要素の中でも2行目のカード（偶数番目）の要素だけを指定しています。
-*/
-
-/* ポイント３：上下の間隔をあける */
-  .card-group > :nth-child(n+3){
-    margin-top: 20px;
-  }
-/* 
-nth-child(n+3)で
-カードグループの直接の子要素の中でも3番目以降のカードの要素だけを指定しています。
-*/
-  .card{
-/* ポイント４：余白をのぞいた１行分の幅を横幅に設定 */
-    width: calc((100% - 20px * 1) / 2);
-    height: auto;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,.2)
-  }
-
-  /* １行あたりの横幅　＝　全体の横幅　ー　余白の合計値　÷　行数
- */
-
-/* card 2col */
-/* --------------------------------- */
 
 /* --------------------------------- */
 /* card 3col */
