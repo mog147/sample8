@@ -136,8 +136,12 @@ div[class$="__text"],
   .conA__text{
     display: block;
     position: absolute;
-    top:-30%;
+    top:-100%;
     left:-130%;
+    margin-bottom: 3rem;
+  }
+  .conA__text p{
+    margin-bottom: 3rem;
   }
 
   .conA__text h1,
@@ -287,6 +291,10 @@ div[class$="__text"],
   width: 65%;
 }
 
+.conE__list{
+  padding: 0;
+}
+
 .conE__list :nth-child(even){
   display: flex;
   justify-content: flex-end;
@@ -297,21 +305,32 @@ div[class$="__text"],
 /* --------------------------------- */
 /* conF */
 
-.conF__image{
-  width: 100%;
-  margin: 0 auto;
+.conF{
+  height: 100vh;
+  min-height: 450px;
+  background-image: url(../img/seo.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100%;
+  margin-right: 1rem;
+
 }
-
-
 /* conF */
 /* --------------------------------- */
 /* hamburger */
 
+.head__image{
+  position: absolute;
+  z-index: 999;
+  top:0;
+  right:0;
+  position: fixed;
+}
 
 .hamburger .btn-gNav {
   position: fixed;
   top: 20px;
-  right: 20px;
+  left: 30px;
   width: 30px;
   height: 24px;
   z-index: 12;
@@ -408,7 +427,85 @@ div[class$="__text"],
     padding: 3rem!important;
 }
 
+.title{
+  font-size: 2rem;
+}
+
+div[class$="__text"], 
+[class*="__text "] {
+ line-height: 2rem;
+}
+
+.head__image{
+  width: 30%;
+}
+
+.conA{
+  background-image: url(../img/top.png);
+  width: 100%;
+  height: auto;
+  min-height: 700px;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100%;
+  background-attachment: fixed;
+}
+.conA::before{
+  background:none;
+}
+.conA .container{
+  padding: 0!important;
+}
+
+.conA__text{
+  top:10%;
+  left:10%;
+}
+
+.conA h1,
+.conA p{
+  display: none;
+}
+
+.conA__image{
+  width: 100%;
+}
+
+.card-group3{
+  display: block;
+}
+.card3{
+  width: auto;
+  margin: 1rem 0;
+}
+
+.card__text {
+  height: auto;
+}
+
+.card-group3 > :not(:nth-child(3n-2)) {
+  margin: 1rem 0;
+}
+
+
+
+.conE__image{
+  width: 100%;
+}
+
+.conE__list :nth-child(even) {
+  display:block;
+}
+
+.img__pc{
+  display: none;
+}
+
+.conF{
+  background-size: 200%;
+}
   
+
 /* --------------------------------- */
 /* header */
   .btn-gNav {
@@ -492,6 +589,10 @@ div[class$="__text"],
     font-size: 16px;
   }
 
+  .img__ph {
+    display: none;
+  }
+
 }
 /* タブレットのときの制御 */
 /* ------------------------ */
@@ -512,9 +613,13 @@ div[class$="__text"],
       font-size: 18px;
   }
 
-  .btn-gNav {
+  .btn-gNav,
+  .img__ph {
     display: none;
   }
+
+
+
 
 }
 
